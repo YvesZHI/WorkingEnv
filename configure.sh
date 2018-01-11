@@ -6,7 +6,9 @@ source ./setDBUS.sh
 
 res=$(gsettings set org.gnome.Vino enabled true 2>&1 >/dev/null)
 if [ -n "$res" ]; then
-	echo "Do NOT run me as root."
+	echo
+	echo "ERROR: do NOT run me as root or sudo!"
+	echo
 	exit 1
 fi
 gsettings set org.gnome.Vino prompt-enabled false
@@ -15,4 +17,4 @@ gsettings set org.gnome.Vino use-alternative-port true
 gsettings set org.gnome.Vino use-upnp true
 gsettings set org.gnome.Vino authentication-methods "['vnc']"
 gsettings set org.gnome.Vino alternative-port 5901
-
+vino-passwd
