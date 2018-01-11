@@ -5,7 +5,7 @@
 source ./setDBUS.sh
 
 res=$(gsettings set org.gnome.Vino enabled true)
-if [[ $res != "" ]]; then
+if test -n "$res"; then
 	echo "Do NOT run me as root."
 	exit 1
 fi
