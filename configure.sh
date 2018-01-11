@@ -4,8 +4,9 @@
 
 source ./setDBUS.sh
 
-if ! gsettings set org.gnome.Vino enabled true ; then
-	echo "Please don't run me as root"
+gsettings set org.gnome.Vino enabled true
+if [ $? -ne 0 ]; then
+	echo "Do NOT run me as root."
 	exit 1
 fi
 gsettings set org.gnome.Vino prompt-enabled false
