@@ -7,5 +7,4 @@ You can execute `./configure.sh` and configure vino-server automatically to make
 
 
 ### Attention ###
-You can't execute `./configure.sh` as root or with sudo.<br>
 The port 5901 is used to configure.
