@@ -10,4 +10,5 @@ You can execute `./configure.sh` which configures vino-server automatically to e
 
 
 ### Attention ###
-The port 5901 is used to configure.
+The port for remote desktop is configurable: `./configure.sh [PORT]`.<br>
+By default, it is 5901.
