@@ -1,4 +1,4 @@
-# config-gsettings
+# Huawei-config
 
 ### Introduction ###
 apt-remove-duplicate-source-entries.py is to remove the source entries duplicated of apt.<br>
