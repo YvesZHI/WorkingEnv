@@ -5,7 +5,7 @@ apt-remove-duplicate-source-entries.py is to remove the source entries duplicate
 initProxy.sh                           is to generate proxy settings for Huawei yellow cloud.<br>
 configure.sh                           is to configure your Ubuntu to enable remote desktop.<br>
 
-#####About configure.sh#####
+##### About configure.sh #####
 Configuring vino-server immediately for Ubuntu16.04 is not possible via remote shell.<br>
 The key is to set the DBUS_SESSION_BUS_ADDRESS environment variable.<br>
 You can execute `./configure.sh` which configures vino-server automatically to enable your remote desktop.<br>
