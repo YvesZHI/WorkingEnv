@@ -2,8 +2,8 @@
 
 ### Introduction ###
 apt-remove-duplicate-source-entries.py is to remove the source entries duplicated of apt.<br>
-initProxy.sh                           is to generate proxy settings for Huawei yellow cloud.<br>
 recompile_git.sh                       is to recompile git with source code.<br>
+initProxy.sh                           is to configure the proxy settings (including apt proxy and wget proxy) for Huawei yellow cloud.<br>
 configure.sh                           is to configure your Ubuntu via remote shell to enable remote desktop.
 
 
