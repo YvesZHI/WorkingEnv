@@ -8,11 +8,11 @@ configure.sh                           is to configure your Ubuntu to enable rem
 
 
 ##### About configure.sh #####
-Configuring vino-server is necessary to enable remote desktop whereas it's impossible to configure via remote shell.<br>
+Configuring vino-server is necessary to enable remote desktop whereas it's impossible to configure directly via remote shell.<br>
 The keys are:
-- to make the user login automatically as the remote desktop needs to read some config files in your home directory.
+- to make the user login automatically as the remote desktop needs to read some config files in the home directory.
 - to set the DBUS_SESSION_BUS_ADDRESS environment variable.
-- to disable keyring.
+- to disable keyring to enable `vino-passwd` via remote shell.
 
 USAGE:<br>
 `./configure.sh` to make the user login automatically, reboot is necessary.<br>
