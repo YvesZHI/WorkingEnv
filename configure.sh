@@ -1,6 +1,33 @@
 #!/bin/bash
 
 
+if [[ "$1" == "noautologin" ]]; then
+	sudo rm -f /etc/lightdm/lightdm.conf
+	exit 0
+fi
+
+if [ ! -f /etc/lightdm/lightdm.conf ]; then
+	sudo touch /etc/lightdm/lightdm.conf
+fi
+
+name=`whoami`
+res=$(grep "autologin-user=$name" /etc/lightdm/lightdm.conf | wc -l)
+
+if [[ $res == 0 ]]; then
+	echo -e "[SeatDefaults]\nautologin-user=$name" | sudo tee -a /etc/lightdm/lightdm.conf > /dev/null
+	echo 'Reboot to finish the configuration.'
+	echo 'You need to execute ./configure.sh again after the next login. y/n:'
+	read input
+	if [[ "$input" != "y" ]]; then
+		echo 'Abort'
+		exit 0
+	fi
+	echo 'Reboot in 5 seconds...'
+	sleep 5
+	sudo shutdown -r now
+fi
+
+
 source ./setDBUS.sh
 
 res=$(gsettings set org.gnome.Vino enabled true 2>&1 >/dev/null)
@@ -19,6 +46,11 @@ else
 	port=$1
 fi
 gsettings set org.gnome.Vino alternative-port $port
+
+# disable keyring
+sudo mv /usr/bin/gnome-keyring-daemon /usr/bin/gnome-keyring-daemon-old
+sudo killall gnome-keyring-daemon
+
 echo "$port is used to build remote desktop."
 echo "Please configure your viewer as x.x.x.x:$port"
 vino-passwd
