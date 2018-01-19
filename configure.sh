@@ -1,6 +1,14 @@
 #!/bin/bash
 
 
+name=`whoami`
+if [[ "$name" == "root" ]]; then
+	read -p "Execute configure.sh as root may cause some permisson issue, are you sure to continue? y/n:" reply
+	if [[ "$reply" != "y" ]]; then
+		exit 0
+	fi
+fi
+
 if [[ "$1" == "noautologin" ]]; then
 	sudo rm -f /etc/lightdm/lightdm.conf
 	exit 0
@@ -10,7 +18,6 @@ if [ ! -f /etc/lightdm/lightdm.conf ]; then
 	sudo touch /etc/lightdm/lightdm.conf
 fi
 
-name=`whoami`
 res=$(grep "autologin-user=$name" /etc/lightdm/lightdm.conf | wc -l)
 
 if [[ $res == 0 ]]; then
