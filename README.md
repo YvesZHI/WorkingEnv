@@ -17,6 +17,7 @@ The keys are:
 USAGE:<br>
 `./configure.sh` to make the user login automatically, reboot is necessary.<br>
 `./configure.sh [PORT]` again after the next login to configure the vino-server. The `[PORT]` is used for the remote desktop. By default, the `[PORT]` is 5901.<br>
+For now you should be able to get the remote desktop via your NVC viewer.<br>
 If you don't need autologin anymore, just do `./configure.sh noautologin`.
 
 ATTENTION:<br>
