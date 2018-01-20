@@ -17,7 +17,7 @@ The keys are:
 USAGE:<br>
 `./configure.sh` to make the user login automatically, reboot is necessary.<br>
 `./configure.sh [PORT]` again after the next login to configure the vino-server. The `[PORT]` is used for the remote desktop. By default, the `[PORT]` is 5901.<br>
-`./configure.sh noautologin` to disable the autologin.
+If you don't need autologin anymore, just do `./configure.sh noautologin`.
 
 ATTENTION:<br>
 Do NOT ssh via remote shell as root to do `./configure.sh`, this can cause some permission issue.<br>
