@@ -46,7 +46,6 @@ gsettings set org.gnome.Vino prompt-enabled false
 gsettings set org.gnome.Vino require-encryption false
 gsettings set org.gnome.Vino use-alternative-port true
 gsettings set org.gnome.Vino use-upnp true
-gsettings set org.gnome.Vino authentication-methods "['none']"
 if [[ "$1" == "" ]]; then
 	port=5901
 else
@@ -60,4 +59,6 @@ sudo killall gnome-keyring-daemon 2>/dev/null
 
 echo "$port is used to build remote desktop."
 echo "Please configure your viewer as x.x.x.x:$port"
+# the gsettings below must be executed AFTER the disable keyring above
+gsettings set org.gnome.Vino authentication-methods "['vnc']"
 vino-passwd
