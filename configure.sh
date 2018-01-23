@@ -60,5 +60,4 @@ sudo killall gnome-keyring-daemon 2>/dev/null
 echo "$port is used to build remote desktop."
 echo "Please configure your viewer as x.x.x.x:$port"
 # the gsettings below must be executed AFTER the disable keyring above
-gsettings set org.gnome.Vino authentication-methods "['vnc']"
-vino-passwd
+gsettings set org.gnome.Vino authentication-methods "['none']"
