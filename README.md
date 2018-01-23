@@ -5,6 +5,7 @@ apt-remove-duplicate-source-entries.py is to remove the source entries duplicate
 recompile_git.sh                       is to recompile git with source code.<br>
 initProxy.sh                           is to configure the proxy settings (including apt proxy and wget proxy) for Huawei yellow cloud.<br>
 configure.sh                           is to configure Ubuntu16.04 via remote shell to enable remote desktop.
+setPasswd.sh                           is to configure the password of VNC.
 
 
 ##### About configure.sh #####
@@ -17,7 +18,8 @@ The keys are:
 USAGE:<br>
 `./configure.sh` to make the user login automatically, reboot is necessary.<br>
 `./configure.sh [PORT]` again after the next login to configure the vino-server. The `[PORT]` is used for the remote desktop. By default, the `[PORT]` is 5901.<br>
-For now you should be able to get the remote desktop via your NVC viewer.<br>
+For now you should be able to get the remote desktop via your NVC viewer WITHOUT password.<br>
+If you want to set a password for VNC, you MUST open a terminal IN the remote desktop that the VNC shows you and execute `./setPasswd.sh`. Doing this via remote shell doesn't work.<br>
 If you don't need autologin anymore, just do `./configure.sh noautologin`.
 
 ATTENTION:<br>
