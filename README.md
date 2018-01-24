@@ -20,6 +20,7 @@ USAGE:<br>
 `./configure.sh [PORT]` again after the next login to configure the vino-server. The `[PORT]` is used for the remote desktop. By default, the `[PORT]` is 5901.<br>
 For now you should be able to get the remote desktop via your NVC viewer WITHOUT password.<br>
 If you want to set a password for VNC, you MUST open a terminal IN the remote desktop that the VNC shows you and execute `./setPasswd.sh`. Doing this via remote shell doesn't work.<br>
+`./setPasswd.sh none` to disable the VNC password, which allows you to get the remote desktop via your VNC viewer without password.<br>
 If you don't need autologin anymore, just do `./configure.sh noautologin`.
 
 ATTENTION:<br>
