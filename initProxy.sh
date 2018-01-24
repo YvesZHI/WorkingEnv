@@ -23,7 +23,7 @@ echo "https_proxy=$http_proxy" | tee -a ~/.wgetrc > /dev/null
 echo "ftp_proxy=$http_proxy" | tee -a ~/.wgetrc > /dev/null
 echo "Acquire::http::proxy \"$http_proxy\";" | sudo tee /etc/apt/apt.conf > /dev/null
 echo "Acquire::https::proxy \"${http_proxy/http/https}\";" | sudo tee -a /etc/apt/apt.conf > /dev/null
-echo "Acquire::https::proxy \"${http_proxy/http/https}\";" | sudo tee -a /etc/apt/apt.conf > /dev/null
+echo "Acquire::ftp::proxy \"${http_proxy/http/ftp}\";" | sudo tee -a /etc/apt/apt.conf > /dev/null
 echo "Acquire::http::Pipeline-Depth 0;" | sudo tee -a /etc/apt/apt.conf > /dev/null
 echo "Acquire::https::Pipeline-Depth 0;" | sudo tee -a /etc/apt/apt.conf > /dev/null
 echo "Acquire::http::No-Cache true;" | sudo tee -a /etc/apt/apt.conf > /dev/null
