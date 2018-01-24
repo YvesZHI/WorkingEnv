@@ -15,9 +15,9 @@ touch ~/.wgetrc
 sed -i '/http_proxy/c\' ~/.bashrc ~/.wgetrc
 sed -i '/https_proxy/c\' ~/.bashrc ~/.wgetrc
 sed -i '/ftp_proxy/c\' ~/.bashrc ~/.wgetrc
-echo "http_proxy=\"$http_proxy\"" | tee -a ~/.bashrc > /dev/null
-echo "https_proxy=\$http_proxy" | tee -a ~/.bashrc > /dev/null
-echo "ftp_proxy=\$http_proxy" | tee -a ~/.bashrc > /dev/null
+echo "export http_proxy=\"$http_proxy\"" | tee -a ~/.bashrc > /dev/null
+echo "export https_proxy=\$http_proxy" | tee -a ~/.bashrc > /dev/null
+echo "export ftp_proxy=\$http_proxy" | tee -a ~/.bashrc > /dev/null
 echo "http_proxy=$http_proxy" | tee -a ~/.wgetrc > /dev/null
 echo "https_proxy=$http_proxy" | tee -a ~/.wgetrc > /dev/null
 echo "ftp_proxy=$http_proxy" | tee -a ~/.wgetrc > /dev/null
