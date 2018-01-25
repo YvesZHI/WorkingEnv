@@ -15,12 +15,21 @@ touch ~/.wgetrc
 sed -i '/http_proxy/c\' ~/.bashrc ~/.wgetrc
 sed -i '/https_proxy/c\' ~/.bashrc ~/.wgetrc
 sed -i '/ftp_proxy/c\' ~/.bashrc ~/.wgetrc
+sudo sed -i '/http_proxy/c\' /etc/profile /etc/wgetrc
+sudo sed -i '/https_proxy/c\' /etc/profile /etc/wgetrc
+sudo sed -i '/ftp_proxy/c\' /etc/profile /etc/wgetrc
 echo "export http_proxy=\"$http_proxy\"" | tee -a ~/.bashrc > /dev/null
 echo "export https_proxy=\$http_proxy" | tee -a ~/.bashrc > /dev/null
 echo "export ftp_proxy=\$http_proxy" | tee -a ~/.bashrc > /dev/null
 echo "http_proxy=$http_proxy" | tee -a ~/.wgetrc > /dev/null
 echo "https_proxy=$http_proxy" | tee -a ~/.wgetrc > /dev/null
 echo "ftp_proxy=$http_proxy" | tee -a ~/.wgetrc > /dev/null
+echo "export http_proxy=\"$http_proxy\"" | sudo tee -a /etc/profile > /dev/null
+echo "export https_proxy=\$http_proxy" | sudo tee -a /etc/profile > /dev/null
+echo "export ftp_proxy=\$http_proxy" | sudo tee -a /etc/profile > /dev/null
+echo "http_proxy=$http_proxy" | sudo tee -a /etc/wgetrc > /dev/null
+echo "https_proxy=$http_proxy" | sudo tee -a /etc/wgetrc > /dev/null
+echo "ftp_proxy=$http_proxy" | sudo tee -a /etc/wgetrc > /dev/null
 echo "Acquire::http::proxy \"$http_proxy\";" | sudo tee /etc/apt/apt.conf > /dev/null
 echo "Acquire::https::proxy \"${http_proxy/http/https}\";" | sudo tee -a /etc/apt/apt.conf > /dev/null
 echo "Acquire::ftp::proxy \"${http_proxy/http/ftp}\";" | sudo tee -a /etc/apt/apt.conf > /dev/null
