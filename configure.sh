@@ -22,8 +22,7 @@ res=$(grep "autologin-user=$name" /etc/lightdm/lightdm.conf | wc -l)
 
 if [[ $res == 0 ]]; then
 	echo -e "[SeatDefaults]\nautologin-user=$name" | sudo tee -a /etc/lightdm/lightdm.conf > /dev/null
-	echo 'Reboot to finish the configuration.'
-	echo 'You need to execute ./configure.sh again after the next login. y/n:'
+	printf 'You need to execute ./configure.sh again after the next login to finish the configuration. Reboot now? y/n: '
 	read input
 	if [[ "$input" != "y" ]]; then
 		echo 'Abort'
