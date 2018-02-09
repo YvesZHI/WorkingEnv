@@ -19,8 +19,8 @@ sudo sed -i '/http_proxy/c\' /etc/profile /etc/wgetrc
 sudo sed -i '/https_proxy/c\' /etc/profile /etc/wgetrc
 sudo sed -i '/ftp_proxy/c\' /etc/profile /etc/wgetrc
 echo "export http_proxy=\"$http_proxy\"" | tee -a ~/.bashrc > /dev/null
-echo "export https_proxy=\$https_proxy" | tee -a ~/.bashrc > /dev/null
-echo "export ftp_proxy=\$ftp_proxy" | tee -a ~/.bashrc > /dev/null
+echo "export https_proxy=$https_proxy" | tee -a ~/.bashrc > /dev/null
+echo "export ftp_proxy=$ftp_proxy" | tee -a ~/.bashrc > /dev/null
 echo "http_proxy=$http_proxy" | tee -a ~/.wgetrc > /dev/null
 echo "https_proxy=$https_proxy" | tee -a ~/.wgetrc > /dev/null
 echo "ftp_proxy=$ftp_proxy" | tee -a ~/.wgetrc > /dev/null
