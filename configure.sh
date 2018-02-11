@@ -10,7 +10,7 @@ if [[ "$name" == "root" ]]; then
 fi
 
 if [[ "$1" == "noautologin" ]]; then
-	sudo rm -f /etc/lightdm/lightdm.conf
+	sudo sed -i '/\[SeatDefaults\]$/{N;s/\[SeatDefaults\]\nautologin-user='"$name"'//}' /etc/lightdm/lightdm.conf 2>/dev/null
 	exit 0
 fi
 
