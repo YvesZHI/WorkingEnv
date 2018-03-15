@@ -3,7 +3,8 @@
 
 sudo cp ca_huawei.crt /usr/local/share/ca-certificates/
 sudo update-ca-certificates
-./config_ip.sh
+
+./config_ip.sh $1 $2
 
 ./initProxy.sh
 
