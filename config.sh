@@ -4,7 +4,7 @@
 sudo cp ca_huawei.crt /usr/local/share/ca-certificates/
 sudo update-ca-certificates
 read -p "configure proxy? [y/n]:" proxy
-if [[ "$proxy" == "Y" || "$proxy" == 'y' ]]; then
+if [[ "$proxy" == "Y" || "$proxy" == "y" ]]; then
 	./initProxy.sh
 fi
 ./config_ip.sh $1 $2
@@ -13,7 +13,7 @@ sudo apt-key adv --keyserver-options http-proxy=$http_proxy --keyserver hkp://ha
 sudo cp -r ./ros /etc/
 sudo sed -i -e 's/hk/cn/g' /etc/apt/sources.list
 read -p "add user mdc? [y/n]:" user
-if [[ "$proxy" == "Y" || "$proxy" == 'y' ]]; then
+if [[ "$proxy" == "Y" || "$proxy" == "y" ]]; then
 	sudo adduser mdc
 	sudo adduser mdc sudo
 fi
