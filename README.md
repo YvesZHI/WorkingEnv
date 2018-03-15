@@ -32,12 +32,16 @@ Multi-remote-desktop is unachievable. The reason is that the remote desktop that
 ##### About config.sh #####
 This script does several configurations:
 -) Update the CA certificate.
-You must make sure that you have put the file `ca_huawei.crt` into your local repository. As you can see in the `.gitignore`, this file isn't and shouldn't be pushed into the github repository.
+You must make sure that you have put the file `ca_huawei.crt` into your local repository. As you can see in the `.gitignore`, this file isn't and shouldn't be pushed into the github repository. You can get it from the manager.
 -) Configure your networking service.
 You can execute `./config.sh <network-interface> <last-octet-LAN-ip-address>` to start your networking service. Before doing that, you can execute `ifconfig -a` to list all available network interfaces and can get your LAN ip address from the manager.
 For example, `./config.sh eth0 10` will configure `172.19.48.10` using the `eth0` to your LAN ip.
 If you don't know which network interface can you use, you have to execute `ifconfig -a` and try one by one. To do so, you can execute `./config_ip.sh <network-interface> <last-octet-LAN-ip-address>`.
-
+-) Initialize your proxy configuration.
+If you need only configure your proxy, just execute `./initProxy.sh`.
+-) Configure the source of ROS1.
+-) Change the source of apt to cn.
+-) Create a user named `mdc` and add it to sudoers.
 
 
 ##### About recompile_git.sh #####
