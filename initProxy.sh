@@ -43,4 +43,4 @@ host_names=`hostname -a | tr ' ' ','`
 export no_proxy=127.0.0.1,.huawei.com,localhost,local,.local,$my_ips,$host_names
 git config --global http.proxy $http_proxy
 git config --global https.proxy $https_proxy
-exec bash  # source ~/.bashrc
+#exec bash  # source ~/.bashrc
