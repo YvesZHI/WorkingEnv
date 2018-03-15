@@ -3,7 +3,9 @@
 
 
 arr=($(ls /sys/class/net/))
-unset 'arr[${#arr[@]}-1]'
+#unset 'arr[${#arr[@]}-1]'
+dello=('lo')
+arr=( "${arr[@]/$dello}" )
 
 for i in "${arr[@]}"; do
 	./config_ip.sh "$i" $1
