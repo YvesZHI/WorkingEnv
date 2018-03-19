@@ -1,0 +1,13 @@
+# This file describes the network interfaces available on your system
+# For more information, see netplan(5).
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+          NAME:
+                  dhcp4: no
+                  dhcp6: no
+                  addresses: [172.19.48.IP/20]
+                  gateway4: 172.19.48.1
+                  nameservers:
+                          addresses: [10.98.48.39,10.72.255.100,10.129.54.130]
