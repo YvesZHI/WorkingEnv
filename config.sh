@@ -15,7 +15,13 @@ sudo sed -i -e 's/hk/cn/g' /etc/apt/sources.list
 read -p "add user mdc? [y/n]:" user
 if [[ "$proxy" == "Y" || "$proxy" == "y" ]]; then
 	sudo adduser mdc
+	echo "set password for mdc:"
 	sudo passwd mdc
+	echo "add mdc to sudoers"
 	sudo adduser mdc sudo
 fi
-
+name=`whoami`
+echo "set password for root:"
+sudo -i passwd
+echo "switch back to user ${name}:"
+su - $name

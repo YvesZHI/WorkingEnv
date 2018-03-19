@@ -3,7 +3,7 @@
 
 version=`lsb_release -r | awk '{print $2}'`
 
-if [ $version -eq "16.04" ];then
+if [ "$version" == "16.04" ];then
 	sudo cp interfaces_bak interfaces
 	sudo sed -i -e "s/NAME/$1/g" interfaces
 	sudo sed -i -e "s/IP/$2/g" interfaces
