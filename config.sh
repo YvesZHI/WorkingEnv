@@ -20,8 +20,5 @@ if [[ "$proxy" == "Y" || "$proxy" == "y" ]]; then
 	echo "add mdc to sudoers"
 	sudo adduser mdc sudo
 fi
-name=`whoami`
 echo "set password for root:"
 sudo -i passwd
-echo "switch back to user ${name}:"
-su - $name
