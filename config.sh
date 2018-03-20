@@ -13,7 +13,7 @@ sudo apt-key adv --keyserver-options http-proxy=$http_proxy --keyserver hkp://ha
 sudo cp -r ./ros /etc/
 sudo sed -i -e 's/hk/cn/g' /etc/apt/sources.list
 read -p "add user mdc? [y/n]:" user
-if [[ "$proxy" == "Y" || "$proxy" == "y" ]]; then
+if [[ "$user" == "Y" || "$user" == "y" ]]; then
 	sudo adduser mdc
 	echo "set password for mdc:"
 	sudo passwd mdc
