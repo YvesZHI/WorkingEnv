@@ -39,6 +39,11 @@ echo "Acquire::http::No-Cache true;" | sudo tee -a /etc/apt/apt.conf > /dev/null
 echo "Acquire::https::No-Cache true;" | sudo tee -a /etc/apt/apt.conf > /dev/null
 echo "Acquire::BrokenProxy true;" | sudo tee -a /etc/apt/apt.conf > /dev/null
 
+my_ips=`ip -f inet addr|grep global | awk '{print $2}'|awk -F/ '{print $1}'|tr '\n' ','`
+host_names=`hostname -a | tr ' ' ','`
+sed -i '/no_proxy/c\' ~/.bashrc
+echo "export no_proxy=127.0.0.1,.huawei.com,localhost,local,.local,${my_ips}${host_names}10.141.107.107,10.141.105.139" | tee -a ~/.bashrc > /dev/null
+
 git config --global http.proxy $http_proxy
 git config --global https.proxy $https_proxy
 #exec bash  # source ~/.bashrc
