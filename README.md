@@ -38,7 +38,7 @@ You can execute `./config.sh <network-interface> <last-octet-LAN-ip-address>` to
 For example, `./config.sh eth0 10` will configure `172.19.48.10` using the `eth0` to your LAN ip.<br>
 If you don't know which network interface you can use, you have to try one by one. To do so, you can execute `./config_ip_one_by_one.sh <last-octet-LAN-ip-address>`.
 - Initialize your proxy configuration.<br>
-If you need only configure your proxy, just execute `./initProxy.sh`.
+If you need only configure your proxy, just execute `source initProxy.sh`.
 - Configure the source of ROS1.
 - Change the source of apt to cn.
 - Create a user named `mdc` and add it to sudoers.
