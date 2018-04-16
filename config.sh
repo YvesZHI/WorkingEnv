@@ -15,8 +15,6 @@ sudo sed -i -e 's/hk/cn/g' /etc/apt/sources.list
 read -p "add user mdc? [y/n]:" user
 if [[ "$user" == "Y" || "$user" == "y" ]]; then
 	sudo adduser mdc
-	echo "set password for mdc:"
-	sudo passwd mdc
 	echo "add mdc to sudoers"
 	sudo adduser mdc sudo
 fi
