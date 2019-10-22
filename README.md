@@ -1,4 +1,4 @@
-# Huawei-config
+# WorkingEnv
 
 ### Introduction ###
 apt-remove-duplicate-source-entries.py is to remove the source entries duplicated of apt.<br>
@@ -32,7 +32,7 @@ Multi-remote-desktop is unachievable. The reason is that the remote desktop that
 ##### About config.sh #####
 This script does several configurations:
 - Update the CA certificate.
-You must make sure that you have put the file `ca_huawei.crt` into your local repository. As you can see in the `.gitignore`, this file isn't and shouldn't be pushed into the github repository. You can get it from the manager.
+You must make sure that you have put the file `ca_hXXXXi.crt` into your local repository. As you can see in the `.gitignore`, this file isn't and shouldn't be pushed into the github repository. You can get it from the manager.
 - Configure your networking service.
 You can execute `./config.sh <network-interface> <last-octet-LAN-ip-address>` to start your networking service. Before doing that, you can execute `ifconfig -a` to list all available network interfaces and can get your LAN ip address from the manager.<br>
 For example, `./config.sh eth0 10` will configure `172.19.48.10` using the `eth0` to your LAN ip.<br>
